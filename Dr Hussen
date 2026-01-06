@@ -49,16 +49,16 @@ class Program
         Product p = new Product();
 
         Console.Write("ID: ");
-        p.Id = int.Parse(Console.ReadLine());
+        p.Id = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Name: ");
         p.Name = Console.ReadLine();
 
         Console.Write("Quantity: ");
-        p.Quantity = int.Parse(Console.ReadLine());
+        p.Quantity = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Price: ");
-        p.Price = decimal.Parse(Console.ReadLine());
+        p.Price = Convert.ToDecimal(Console.ReadLine());
 
         products.Add(p);
         Console.WriteLine("Product added");
@@ -95,7 +95,7 @@ class Program
     static void UpdateProduct()
     {
         Console.Write("Enter ID: ");
-        int id = int.Parse(Console.ReadLine());
+        int id = Convert.ToInt32(Console.ReadLine());
 
         foreach (Product p in products)
         {
@@ -105,10 +105,10 @@ class Program
                 p.Name = Console.ReadLine();
 
                 Console.Write("New Quantity: ");
-                p.Quantity = int.Parse(Console.ReadLine());
+                p.Quantity = Convert.ToInt32(Console.ReadLine());
 
                 Console.Write("New Price: ");
-                p.Price = decimal.Parse(Console.ReadLine());
+                p.Price = Convert.ToDecimal(Console.ReadLine());
 
                 Console.WriteLine("Product updated");
                 return;
@@ -122,11 +122,9 @@ class Program
     static void DeleteProduct()
     {
         Console.Write("Enter ID: ");
-        int id = int.Parse(Console.ReadLine());
+        int id = Convert.ToInt32(Console.ReadLine());
 
         products.RemoveAll(p => p.Id == id);
         Console.WriteLine("Product deleted");
     }
 }
-
-     
